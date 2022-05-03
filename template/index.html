@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Color Game</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+    <main>
+        <h1>Color <span id="colorNumber">#C4C4C4</span></h1>
+        <div id="color"></div>
+        <div id="buttons">
+            <button id="nextPartner" data-t="changePartner">Next partner</button>
+            <button id="nextColor" data-t="changeColor">Next color</button>
+        </div>
+    </main>
+    <div id="eventsBlock">
+        <h2>Event list</h2>
+        <ul id="events">
+
+        </ul>
+    </div>
+    <footer>
+        <span>Your user id: <span id="uid">Empty</span></span>
+        <span>Online: <span id="onlineNumber">-1</span></span>
+        <span>Partner's user id: <span id="pid">Empty</span></span>
+    </footer>
+</body>
+<script>let color = "{{ color }}"</script>
+<script src="../static/index.js"></script>
+</html>

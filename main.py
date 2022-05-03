@@ -10,5 +10,5 @@ app.mount(STATIC_URL, StaticFiles(directory=STATIC_DIR), name="static")
 app.include_router(router, tags=["core"])
 
 
-if __name__ == '__main__':
-    system("uvicorn main:app --reload")
+# if __name__ == '__main__':
+#     system("uvicorn main:app --reload")

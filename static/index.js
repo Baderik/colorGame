@@ -1,4 +1,6 @@
-const wsUrl = "ws://" + window.location.host + "/ws";
+const wsUrl = (window.location.protocol === "http:" ? "ws://" : "wss://")
+    + window.location.host + "/ws";
+
 const responseTypes = {"start": startWs,
     "changePartner": changePartner,
     "changeColor": changeColor,
@@ -97,3 +99,4 @@ let button = document.getElementById("nextPartner");
 button.onclick = buttonClick;
 button = document.getElementById("nextColor");
 button.onclick = buttonClick;
+changeColor(color);

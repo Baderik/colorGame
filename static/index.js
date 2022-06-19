@@ -25,7 +25,7 @@ function changePartner(pid) {
 
 function changeColor(color) {
     let colorEl = document.getElementById("colorNumber");
-    newMessage("Partner changed your color #" + colorEl.innerText + " --> " + color);
+    newMessage("Partner changed your color " + colorEl.innerText + " --> " + color);
 
     colorEl.innerText = color;
 

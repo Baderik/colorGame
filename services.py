@@ -52,8 +52,12 @@ async def _change_color(ws_id: str) -> None:
     ws: MyWS = await manager.get_ws(ws_id)
 
     if ws.partner:
-        response: StandardModel = StandardModel(type="changeColor", data=r_color())
+        color: str = r_color()
+        response: StandardModel = StandardModel(type="changeColor", data=color)
         await manager.send_data(ws.partner, response.dict())
+        response = StandardModel(type="message",
+                                 data="Partner's color has been changed " + color)
+        await manager.send_data(ws_id, response.dict())
     else:
         response: StandardModel = StandardModel(type="message",
                                                 data="You haven't a partner, "

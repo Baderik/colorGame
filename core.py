@@ -2,17 +2,14 @@ from fastapi import FastAPI
 from fastapi import WebSocket
 from typing import Union
 from uuid import uuid4
+from dataclasses import dataclass
 
 
+@dataclass
 class MyWS:
     ws: WebSocket
     ws_id: str
-    partner: str
-
-    def __init__(self, ws: WebSocket, ws_id: str, partner: str = ""):
-        self.ws = ws
-        self.ws_id = ws_id
-        self.partner = partner
+    partner: str = ""
 
 
 class ConnectionManager:
@@ -63,7 +60,6 @@ class ConnectionManager:
 
         for my_ws in self.active_connections.values():
             await my_ws.ws.send_json({"type": "online", "data": count})
-
 
 
 app = FastAPI()

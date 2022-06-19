@@ -2568,6 +2568,9 @@ textarea.form-control-lg {
   filter: none;
   opacity: 0.65;
 }
+.btn:active {
+  transform: translateY(1px);
+}
 
 .form-range {
   width: 100%;
